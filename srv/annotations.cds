@@ -2,6 +2,9 @@ using HouseManagementService as service from './house_srv';
 
 //tableA - Groceries
 annotate service.groceries with @(UI: {
+    CreateHidden : false,
+    UpdateHidden : false,
+    DeleteHidden : false,
     HeaderInfo         : {
         TypeName      : 'Grocery',
         TypeNamePlural: 'Groceries',
@@ -36,6 +39,9 @@ annotate service.groceries with @(UI: {
 
 //tableB - Workers
 annotate service.workers with @(UI: {
+    CreateHidden : false,
+    UpdateHidden : false,
+    DeleteHidden : false,
     HeaderInfo         : {
         TypeName      : 'Worker',
         TypeNamePlural: 'Workers',
@@ -69,6 +75,9 @@ annotate service.workers with @(UI: {
 
 //tableC - Monthly Expenditures
 annotate service.monthlyexpenditures with @(UI: {
+    CreateHidden : false,
+    UpdateHidden : false,
+    DeleteHidden : false,
     HeaderInfo         : {
         TypeName      : 'Monthly Expenditure',
         TypeNamePlural: 'Monthly Expenditures',
@@ -116,6 +125,9 @@ annotate service.monthlyexpenditures with @(UI: {
 
 //tableD - Utilities
 annotate service.utilities with @(UI: {
+    CreateHidden : false,
+    UpdateHidden : false,
+    DeleteHidden : false,
     HeaderInfo         : {
         TypeName      : 'Utility',
         TypeNamePlural: 'Utilities',

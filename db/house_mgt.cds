@@ -125,4 +125,3 @@ entity maintenance {
   @title : 'Worker'
   worker : Association to worker;
 }
-
