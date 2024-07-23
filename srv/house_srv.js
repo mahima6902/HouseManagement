@@ -1,4 +1,5 @@
 const cds = require('@sap/cds');
+//console.log('Loaded entities:', Object.keys(this.entities));
 
 module.exports = cds.service.impl(async function () {
     const { grocery, worker, monthlyexpenditure, utility, maintenance } = this.entities;
@@ -9,7 +10,7 @@ module.exports = cds.service.impl(async function () {
         return await SELECT.from(grocery).where(req.query.SELECT.where);
     });
 
-    this.before('CREATE', 'groceries', async (req) => {
+    this.before('CREATE', grocery, async (req) => {
         const { monthlyexpenditure_id } = req.data;
         if (monthlyexpenditure_id) {
             const tx = cds.transaction(req);

@@ -10,10 +10,12 @@ annotate service.groceries with @(UI: {
         TypeNamePlural: 'Groceries',
         Title         : {Value: name}
     },
+
     SelectionFields    : [
         name,
         purchasedate
     ],
+
     LineItem           : [
         {Value: name},
         {Value: quantity},
@@ -21,11 +23,13 @@ annotate service.groceries with @(UI: {
         {Value: price},
         {Value: purchasedate}
     ],
+
     Facets             : [{
         $Type : 'UI.ReferenceFacet',
         Label : 'Details',
         Target: '@UI.FieldGroup#Details'
     }],
+    
     FieldGroup #Details: {Data: [
         {Value: name},
         {Value: quantity},
@@ -47,10 +51,12 @@ annotate service.workers with @(UI: {
         TypeNamePlural: 'Workers',
         Title         : {Value: name}
     },
+    
     SelectionFields    : [
         name,
         role
     ],
+
     LineItem           : [
         {Value: name},
         {Value: role},
@@ -58,11 +64,13 @@ annotate service.workers with @(UI: {
         {Value: hoursworked},
         {Value: paymentdue}
     ],
+
     Facets             : [{
         $Type : 'UI.ReferenceFacet',
         Label : 'Details',
         Target: '@UI.FieldGroup#Details'
     }],
+
     FieldGroup #Details: {Data: [
         {Value: name},
         {Value: role},
@@ -83,10 +91,12 @@ annotate service.monthlyexpenditures with @(UI: {
         TypeNamePlural: 'Monthly Expenditures',
         Title         : {Value: month}
     },
+
     SelectionFields    : [
         month,
         year
     ],
+
     LineItem           : [
         {Value: month},
         {Value: year},
@@ -95,6 +105,7 @@ annotate service.monthlyexpenditures with @(UI: {
         {Value: utilityexpense},
         {Value: totalexpense}
     ],
+
     Facets             : [
         {
             $Type : 'UI.ReferenceFacet',
@@ -112,6 +123,7 @@ annotate service.monthlyexpenditures with @(UI: {
             Target: 'utilities/@UI.LineItem'
         }
     ],
+    
     FieldGroup #Details: {Data: [
         {Value: month},
         {Value: year},
