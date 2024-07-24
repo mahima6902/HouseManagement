@@ -1,10 +1,9 @@
 const cds = require('@sap/cds');
-//console.log('Loaded entities:', Object.keys(this.entities));
 
 module.exports = cds.service.impl(async function () {
     const { grocery, worker, monthlyexpenditure, utility, maintenance } = this.entities;
 
-    
+
     // Grocery operations
     this.on('READ', grocery, async req => {
         return await SELECT.from(grocery).where(req.query.SELECT.where);
@@ -23,7 +22,7 @@ module.exports = cds.service.impl(async function () {
         const { quantity, price } = req.data;
         if (quantity <= 0) throw new Error('Quantity must be greater than zero');
         if (price <= 0) throw new Error('Price must be greater than zero');
-        });
+    });
 
     this.on('UPDATE', grocery, async req => {
         const groceryId = req.params[0];
@@ -82,7 +81,7 @@ module.exports = cds.service.impl(async function () {
         if (month < 1 || month > 12) throw new Error('Invalid month');
         if (year < 2000 || year > 2100) throw new Error('Invalid year');
 
-        // Check if an entry for this month and year already exists
+        // Check if entry for this month and year already exists
         const existing = await SELECT.one.from(monthlyexpenditure).where({ month, year });
         if (existing) throw new Error('An entry for this month and year already exists');
     });
@@ -101,7 +100,7 @@ module.exports = cds.service.impl(async function () {
     });
 
     this.after('READ', monthlyexpenditure, async (results) => {
-        // Calculate total expense for each entry
+        // Calculate total expense
         results.forEach(entry => {
             entry.totalexpense = entry.groceryexpense + entry.workerexpense + entry.utilityexpense;
         });

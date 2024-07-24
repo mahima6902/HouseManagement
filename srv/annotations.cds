@@ -1,5 +1,6 @@
 using HouseManagementService as service from './house_srv';
 
+
 //tableA - Groceries
 annotate service.groceries with @(UI: {
     CreateHidden : false,
@@ -17,26 +18,61 @@ annotate service.groceries with @(UI: {
     ],
 
     LineItem           : [
-        {Value: name},
-        {Value: quantity},
-        {Value: unit},
-        {Value: price},
-        {Value: purchasedate}
+        {
+            Value: name,
+            Label: 'Name'
+        },
+        {
+            Value: quantity,
+            Label: 'Quantity'
+        },
+        {
+            Value: unit,
+            Label: 'Unit'
+        },
+        {
+            Value: price,
+            Label: 'Price'
+        },
+        {
+            Value: purchasedate,
+            Label: 'Purchase Date'
+        }
     ],
 
-    Facets             : [{
+    Facets             : [
+    {
         $Type : 'UI.ReferenceFacet',
         Label : 'Details',
         Target: '@UI.FieldGroup#Details'
-    }],
+    }
+    ],
     
     FieldGroup #Details: {Data: [
-        {Value: name},
-        {Value: quantity},
-        {Value: unit},
-        {Value: price},
-        {Value: purchasedate},
-        {Value: monthlyexpenditure_id}
+        {
+            Value: name,
+            Label: 'Name'
+        },
+        {
+            Value: quantity,
+            Label: 'Quantity'
+        },
+        {
+            Value: unit,
+            Label: 'Unit'
+        },
+        {
+            Value: price,
+            Label: 'Price'
+        },
+        {
+            Value: purchasedate,
+            Label: 'Purchase Date'
+        },
+        {
+            Value: monthlyexpenditure_id,
+            Label: 'Monthly Expenditure ID'
+        }
     ]}
 });
 
@@ -58,25 +94,57 @@ annotate service.workers with @(UI: {
     ],
 
     LineItem           : [
-        {Value: name},
-        {Value: role},
-        {Value: hourlyrate},
-        {Value: hoursworked},
-        {Value: paymentdue}
+        {
+            Value: name,
+            Label: 'Name'
+        },
+        {
+            Value: role,
+            Label: 'Role'
+        },
+        {
+            Value: hourlyrate,
+            Label: 'Hourly Rate'
+        },
+        {
+            Value: hoursworked,
+            Label: 'Hours Worked'
+        },
+        {
+            Value: paymentdue,
+            Label: 'Payment Due'
+        }
     ],
 
-    Facets             : [{
-        $Type : 'UI.ReferenceFacet',
-        Label : 'Details',
-        Target: '@UI.FieldGroup#Details'
-    }],
+    Facets             : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Details',
+            Target: '@UI.FieldGroup#Details'
+        }
+    ],
 
     FieldGroup #Details: {Data: [
-        {Value: name},
-        {Value: role},
-        {Value: hourlyrate},
-        {Value: hoursworked},
-        {Value: paymentdue}
+        {
+            Value: name,
+            Label: 'Name'
+        },
+        {
+            Value: role,
+            Label: 'Role'
+        },
+        {
+            Value: hourlyrate,
+            Label: 'Hourly Rate'
+        },
+        {
+            Value: hoursworked,
+            Label: 'Hours Worked'
+        },
+        {
+            Value: paymentdue,
+            Label: 'Payment Due'
+        }
     ]}
 });
 
@@ -98,12 +166,30 @@ annotate service.monthlyexpenditures with @(UI: {
     ],
 
     LineItem           : [
-        {Value: month},
-        {Value: year},
-        {Value: groceryexpense},
-        {Value: workerexpense},
-        {Value: utilityexpense},
-        {Value: totalexpense}
+        {
+            Value: month,
+            Label: 'Month'
+        },
+        {
+            Value: year,
+            Label: 'Year'
+        },
+        {
+            Value: groceryexpense,
+            Label: 'Grocery Expense'
+        },
+        {
+            Value: workerexpense,
+            Label: 'Worker Expense'
+        },
+        {
+            Value: utilityexpense,
+            Label: 'Utility Expense'
+        },
+        {
+            Value: totalexpense,
+            Label: 'Total Expense'
+        }
     ],
 
     Facets             : [
@@ -125,12 +211,30 @@ annotate service.monthlyexpenditures with @(UI: {
     ],
     
     FieldGroup #Details: {Data: [
-        {Value: month},
-        {Value: year},
-        {Value: groceryexpense},
-        {Value: workerexpense},
-        {Value: utilityexpense},
-        {Value: totalexpense}
+        {
+            Value: month,
+            Label: 'Month'
+        },
+        {
+            Value: year,
+            Label: 'Year'
+        },
+        {
+            Value: groceryexpense,
+            Label: 'Grocery Expense'
+        },
+        {
+            Value: workerexpense,
+            Label: 'Worker Expense'
+        },
+        {
+            Value: utilityexpense,
+            Label: 'Utility Expense'
+        },
+        {
+            Value: totalexpense,
+            Label: 'Total Expense'
+        }
     ]}
 });
 
@@ -154,16 +258,20 @@ annotate service.utilities with @(UI: {
 
     LineItem           : [
         {
-            Value: name
+            Value: name,
+            Label: 'Name'
         },
         {
-            Value: amount
+            Value: amount,
+            Label: 'Amount'
         },
         {
-            Value: duedate
+            Value: duedate,
+            Label: 'Due Date'
         },
         {
-            Value: paid
+            Value: paid,
+            Label: 'Paid'
         }
     ],
 
@@ -177,19 +285,24 @@ annotate service.utilities with @(UI: {
 
     FieldGroup #Details: {Data: [
         {
-            Value: name
+            Value: name,
+            Label: 'Name'
         },
         {
-            Value: amount
+            Value: amount,
+            Label: 'Amount'
         },
         {
-            Value: duedate
+            Value: duedate,
+            Label: 'Due Date'
         },
         {
-            Value: paid
+            Value: paid,
+            Label: 'Paid'
         },
         {
-            Value: monthlyexpenditure_id
+            Value: monthlyexpenditure_id,
+            Label: 'Monthly expenditure ID'
         }
     ]}
 });
